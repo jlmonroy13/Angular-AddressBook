@@ -1,0 +1,23 @@
+img{
+    max-width:100%;
+    vertical-align: middle;
+}
+
+.img--round { border-radius:$border-radius-base; }
+
+.img--right{
+    float:right;
+    margin-bottom:$base-spacing-unit;
+    margin-left:$base-spacing-unit;
+}
+.img--left{
+    float:left;
+    margin-right:$base-spacing-unit;
+    margin-bottom:$base-spacing-unit;
+}
+.img--center{
+    display:block;
+    margin-right:auto;
+    margin-bottom:$base-spacing-unit;
+    margin-left:auto;
+}

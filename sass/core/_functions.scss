@@ -1,0 +1,28 @@
+
+@function strip-units($number){
+  @return ($number / ($number * 0 + 1));
+}
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+@function to-rem($des, $base: $font-size-base){
+  @if not unitless($des) {
+      $des: strip-units($des);
+  }
+  $base: strip-units($base);
+  @return ($des / $base) *1rem;
+}
+
+@function calculate-line-height($font-size) {
+  $line-height-size: ceil($font-size / $line-height-computed) * ($line-height-computed / $font-size);
+
+  @return $line-height-size;
+}
