@@ -1,6 +1,3 @@
-# Ignore sass_cache folder
-.sass-cache
-
 # Ignore node_modules folder
 node_modules
 
