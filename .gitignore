@@ -1,0 +1,11 @@
+# Ignore sass_cache folder
+.sass-cache
+
+# Ignore node_modules folder
+node_modules
+
+# Ignore bower_components folder
+bower_components
+
+# Ignore .DS_store file
+*.DS_Store
