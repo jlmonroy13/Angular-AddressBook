@@ -1,0 +1,60 @@
+.table {
+  background-color: $color-brand;
+  border-collapse: collapse;
+  min-width: 1080px;
+  text-align: center;
+  position: relative;
+  &__container {
+    width: 1080px;
+    margin-bottom: 2.3rem;
+    overflow: auto;
+    box-shadow: 0px 6px 28px -8px rgba(0,0,0,0.75);
+  }
+  &__title {
+    color: $gray-darker;
+    @include font-size(16px);
+  }
+  &__data {
+    border-bottom: 1px solid $gray-lighter;
+    @include font-size(13px);
+    padding: 10px;
+    color: $gray-dark;
+    text-align: left;
+    vertical-align: middle;
+  }
+}
+tbody {
+  height: 200px;
+  overflow: auto;
+}
+tr {
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray-lighter;
+  }
+}
+.table-head {
+  background-color: #F3F3F3;
+  &__data {
+    border-bottom: 2px solid $gray;
+    @include font-size(13px);
+    padding: 10px;
+    text-transform: capitalize;
+    color: $gray;
+    text-align: left;
+  }
+  tr {
+    cursor: initial;
+    &:hover {
+      background-color: #F3F3F3;
+    }
+  }
+}
+.icon-user {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background: url('../images/icon-user.png') no-repeat;
+  vertical-align: middle;
+}

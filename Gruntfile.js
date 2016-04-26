@@ -33,9 +33,10 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'bower_components/jquery/dist/jquery.js'
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/angular/angular.js'
         ], 
-        dest: 'javascripts/vendor/bundle.js'
+        dest: 'application/assets/javascripts/vendor/bundle.js'
       },
     },
     browserSync: {
@@ -49,7 +50,11 @@ module.exports = function(grunt) {
         },
         options: {
           watchTask: true,
-          server: './application'
+          server: './application',
+          ports: {
+            min: 8080,
+            max: 8080,
+          }
         }
       }
     },
@@ -57,7 +62,6 @@ module.exports = function(grunt) {
       my_target: {
         files: {
           'application/assets/javascripts/application.min.js': [
-            'javascripts/vendor/bundle.js', 
             'javascripts/application.js'
           ]
         }

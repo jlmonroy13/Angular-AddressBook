@@ -1,5 +1,4 @@
 @mixin circle-icon($size: 16, $icon-size: 16, $context: 16) {
-  @include size(em($size, $context));
   @include rem(16);
   border-radius: 1000px;
   display: inline-block;

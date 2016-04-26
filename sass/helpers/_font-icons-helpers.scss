@@ -2,3 +2,15 @@
 .icon-3x { font-size: 3em; }
 .icon-4x { font-size: 4em; }
 .icon-5x { font-size: 5em; }
+
+.icon--gray {
+  color: $gray-light;
+}
+
+.icon--white {
+  color: $color-brand;
+}
+
+.icon--align {
+  vertical-align: middle;
+}

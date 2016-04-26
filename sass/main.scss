@@ -17,6 +17,7 @@
 
 // Core styles
 @import "core/core";
+@import "core/fonts";
 @import "core/font-icons";
 @import "core/typography";
 @import "core/layout";
@@ -26,9 +27,11 @@
 @import "modules/buttons";
 @import "modules/buttons-base";
 @import "modules/grid";
-@import "modules/main-footer";
-@import "modules/main-header";
-@import "modules/main-navigation";
+@import "modules/header";
+@import "modules/table";
+@import "modules/modal";
+@import "modules/form";
+
 
 // Helpers
 @import "helpers/font-icons-helpers";

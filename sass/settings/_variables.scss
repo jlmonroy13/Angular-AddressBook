@@ -12,7 +12,7 @@ $end: right;
 $font-family-sans-serif:            "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 $font-family-serif:                 Cambria, Times New Roman, Times, serif !default;
 $font-family-base:                  $font-family-sans-serif;
-$font-family-icons:                 "icon-family";
+$font-family-icons:                 'addressbook';
 
 $golden-ratio:                      1.4;
 
@@ -68,7 +68,7 @@ $half-spacing-unit:                 $line-height-computed / 2;
 
 // Borders
 $border-radius-base:                4px;
-$border-radius-large:               5px;
+$border-radius-large:               6px;
 $border-radius-small:               3px;
 
 // Media Queries and grid settings
@@ -91,7 +91,7 @@ $landscape:                         "only screen and (orientation: landscape)";
 $portrait:                          "only screen and (orientation: portrait)";
 
 
-$use-silent-classes:                true!default;
+$use-silent-classes:                false!default;
 $gutter:                            $base-spacing-unit!default;
 $push:                              false!default;
 $pull:                              false!default;

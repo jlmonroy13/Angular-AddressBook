@@ -24,6 +24,24 @@
   @include button-style($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
+
+.button-circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  transition: 0.5s;
+  @include font-size(30px);
+  line-height: 1;
+  padding-bottom: 10px;
+  cursor: pointer;
+  &--position {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+  }
+}
+
 .button-border{
   border: 1px solid;
   text-transform: uppercase;

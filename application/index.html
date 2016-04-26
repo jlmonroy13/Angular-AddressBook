@@ -1,9 +1,9 @@
 <!-- Developed by  -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="apiKoombeaProfiles">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Address-Book</title>
   <meta name="description" content="" />
   <meta name="author" content="" />
   <meta name="keywords" content="" />
@@ -12,7 +12,59 @@
   <link rel="stylesheet" href="assets/stylesheet/main.min.css" />
 </head>
 <body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Koombea Contacts</h1>
+      <div class="input-group">
+        <i class="input-group__icon icon-search icon--white"></i>
+        <input class="input-group__input" type="text" placeholder="Search...">
+      </div>
+    </div>  
+  </header>
+  <div class="container container--small soft--top">
+    <h1 class="table__title">Contacts</h1>
+    <div class="table__container">
+      <table class="table">
+        <thead class="table-head"><!-- Table head -->
+          <tr>
+            <th class="table-head__data">first name</th>
+            <!-- <th class="table-head__data">middle name</th> -->
+            <th class="table-head__data">last name</th>
+            <th class="table-head__data">mother maiden name</th>
+            <!-- <th class="table-head__data">birthdate</th>
+            <th class="table-head__data">home address</th>
+            <th class="table-head__data">home phone number</th> -->
+            <!-- <th class="table-head__data">mobile number</th>
+            <th class="table-head__data">coo contract date</th>
+            <th class="table-head__data">koombea contract date</th>
+            <th class="table-head__data">personal email</th> -->
+            <th class="table-head__data">company email</th>
+            <th class="table-head__data">area id</th>
+          </tr>
+        </thead>
+        <tbody ng-controller="KoombeaProfilesCtrl as profiles"><!-- Table body -->
+          <tr ng-repeat="contact in profiles.contacts">
+            <td class="table__data bold"><span class="icon-user push-half--right"></span>{{contact.first_name}}</td>
+            <!-- <td class="table__data bold">{{contact.middle_name}}</td> -->
+            <td class="table__data bold">{{contact.last_name}}</td>
+            <td class="table__data bold">{{contact.mother_maiden_name}}</td>
+            <!-- <td class="table__data"><i class="push-half--right icon-cake icon--gray icon--align"></i>{{contact.date_of_birth | date}}</td>
+            <td class="table__data"><i class="push-half--right icon-direction icon--gray icon--align"></i>{{contact.home_address}}</td>
+            <td class="table__data"><i class="push-half--right icon-phone icon--gray icon--align"></i>{{contact.home_phone_number}}</td>
+            <td class="table__data"><i class="push-half--right icon-mobile icon--gray icon--align"></i>{{contact.mobile_number}}</td>
+            <td class="table__data">{{contact.cooempresarial_contract_date | date}}</td>
+            <td class="table__data">{{contact.koombea_contract_date | date}}</td>
+            <td class="table__data"><i class="push-half--right icon-mail-linear icon--gray icon--align"></i>{{contact.personal_email}}</td> -->
+            <td class="table__data"><i class="push-half--right icon-mail icon--gray icon--align"></i>{{contact.company_email}}</td>
+            <td class="table__data">{{contact.area_id}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    <button class="button--default bold button-circle button-circle--position">+</button>
+  </div>
 
+  <script src="assets/javascripts/vendor/bundle.js"></script>
   <script src="assets/javascripts/application.min.js"></script>
 </body>
 </html>

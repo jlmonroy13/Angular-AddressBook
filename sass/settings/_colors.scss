@@ -4,11 +4,14 @@ $gray-dark:                       lighten($gray-base, 20%) !default;   // #333
 $gray:                            lighten($gray-base, 33.5%) !default; // #555
 $gray-light:                      lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:                    lighten($gray-base, 93.5%) !default; // #eee
+$orange:                          #F4511E;
+$orange-light:                    #F18360;
+$aqua-blue:                       #00BCD4;
 
 // Brand
 $color-brand:                     white;
 
-$brand-primary:                   black !default;
+$brand-primary:                   $orange !default;
 $brand-success:                   black !default;
 $brand-info:                      black !default;
 $brand-warning:                   black !default;
@@ -17,7 +20,7 @@ $brand-ui:                        black;
 $brand-default:                   black;
 
 // Body 
-$body-bg:                         white;
+$body-bg:                         $gray-lighter;
 $color-text-body:                 black;
 
 // Links
@@ -29,8 +32,8 @@ $headings-color:                  black;
 
 // Buttons
 $btn-default-color:               white;
-$btn-default-bg:                  $brand-default;
-$btn-default-border:              $brand-default;
+$btn-default-bg:                  $aqua-blue;
+$btn-default-border:              $aqua-blue;
 
 $btn-primary-color:               white;
 $btn-primary-bg:                  $color-brand;
