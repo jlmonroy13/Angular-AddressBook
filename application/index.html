@@ -21,47 +21,98 @@
       </div>
     </div>  
   </header>
-  <div class="container container--small soft--top">
+  <div class="container container--small soft--top" ng-controller="KoombeaProfilesCtrl as profiles">
     <h1 class="table__title">Contacts</h1>
     <div class="table__container">
       <table class="table">
         <thead class="table-head"><!-- Table head -->
           <tr>
             <th class="table-head__data">first name</th>
-            <!-- <th class="table-head__data">middle name</th> -->
             <th class="table-head__data">last name</th>
             <th class="table-head__data">mother maiden name</th>
-            <!-- <th class="table-head__data">birthdate</th>
-            <th class="table-head__data">home address</th>
-            <th class="table-head__data">home phone number</th> -->
-            <!-- <th class="table-head__data">mobile number</th>
-            <th class="table-head__data">coo contract date</th>
-            <th class="table-head__data">koombea contract date</th>
-            <th class="table-head__data">personal email</th> -->
             <th class="table-head__data">company email</th>
             <th class="table-head__data">area id</th>
           </tr>
         </thead>
-        <tbody ng-controller="KoombeaProfilesCtrl as profiles"><!-- Table body -->
-          <tr ng-repeat="contact in profiles.contacts">
+        <tbody><!-- Table body -->
+          <tr ng-repeat="contact in profiles.contacts" ng-click="profiles.getProfile(contact)">
             <td class="table__data bold"><span class="icon-user push-half--right"></span>{{contact.first_name}}</td>
-            <!-- <td class="table__data bold">{{contact.middle_name}}</td> -->
             <td class="table__data bold">{{contact.last_name}}</td>
             <td class="table__data bold">{{contact.mother_maiden_name}}</td>
-            <!-- <td class="table__data"><i class="push-half--right icon-cake icon--gray icon--align"></i>{{contact.date_of_birth | date}}</td>
-            <td class="table__data"><i class="push-half--right icon-direction icon--gray icon--align"></i>{{contact.home_address}}</td>
-            <td class="table__data"><i class="push-half--right icon-phone icon--gray icon--align"></i>{{contact.home_phone_number}}</td>
-            <td class="table__data"><i class="push-half--right icon-mobile icon--gray icon--align"></i>{{contact.mobile_number}}</td>
-            <td class="table__data">{{contact.cooempresarial_contract_date | date}}</td>
-            <td class="table__data">{{contact.koombea_contract_date | date}}</td>
-            <td class="table__data"><i class="push-half--right icon-mail-linear icon--gray icon--align"></i>{{contact.personal_email}}</td> -->
             <td class="table__data"><i class="push-half--right icon-mail icon--gray icon--align"></i>{{contact.company_email}}</td>
             <td class="table__data">{{contact.area_id}}</td>
           </tr>
         </tbody>
       </table>
     </div> 
-    <button class="button--default bold button-circle button-circle--position">+</button>
+    
+
+    <!-- Contact Modal --> 
+    <div class="modal js-modal" id="modal" ng-class="{ 'modal--open': profiles.modal }">
+      <div class="modal-content">
+        <span class="button-close button-close--position" ng-click="profiles.closeModal()">x</span>
+        <div class="grid grid--middle">
+          <div class="grid__item medium--three-tenths one-whole">
+            <div class="main-info">
+              <img class="push--bottom" src="assets/images/user-photo.png" alt="">
+              <p>
+                {{profiles.actualProfile.first_name}}
+                {{profiles.actualProfile.middle_name}}
+                {{profiles.actualProfile.last_name}}
+                {{profiles.actualProfile.mother_maiden_name}}
+              </p>
+            </div>
+          </div><!-- 
+       --><div class="grid__item medium--seven-tenths one-whole">  
+            <div class="secondary-info">
+              <h1 class="secondary-info__title capitalize">contact information</h1>
+              <div class="grid">
+                <div class="grid__item medium--one-half one-whole">
+                  <div class="field">
+                    <span class="field__title capitalize">birthdate</span>
+                    <p class="field__data"><i class="push-half--right icon-cake icon--gray icon--align"></i>{{profiles.actualProfile.date_of_birth | date}}</p>
+                  </div>
+                  <div class="field"> 
+                    <span class="field__title capitalize">home address</span>
+                    <p class="field__data"><i class="push-half--right icon-direction icon--gray icon--align"></i>{{profiles.actualProfile.home_address || "-"}}</p>
+                  </div>  
+                  <div class="field">
+                    <span class="field__title capitalize">home phone number</span>
+                    <p class="field__data"><i class="push-half--right icon-phone icon--gray icon--align"></i>{{profiles.actualProfile.phone_number || "-"}}</p>
+                  </div>  
+                  <div class="field">
+                    <span class="field__title capitalize">mobile number</span>
+                    <p class="field__data"><i class="push-half--right icon-mobile icon--gray icon--align"></i>{{profiles.actualProfile.mobile_number || "-"}}</p>
+                  </div>  
+                  <div class="field">
+                    <span class="field__title capitalize">company email</span>
+                    <p class="field__data"><i class="push-half--right icon-mail icon--gray icon--align"></i>{{profiles.actualProfile.company_email || "-"}}</p>
+                  </div> 
+                </div><!-- 
+                 --><div class="grid__item medium--one-half one-whole">
+                  <div class="field">
+                    <span class="field__title capitalize">personal email</span>
+                    <p class="field__data"><i class="push-half--right icon-mail-linear icon--gray icon--align"></i>{{profiles.actualProfile.personal_email || "-"}}</p>
+                  </div>
+                  <div class="field">
+                    <span class="field__title capitalize">koombea contract date</span>
+                    <p class="field__data">{{profiles.actualProfile.koombea_contract_date || "-" | date}}</p>
+                  </div>    
+                  <div class="field">
+                    <span class="field__title capitalize">coo contract date</span>
+                    <p class="field__data">{{profiles.actualProfile.cooempresarial_contract_date || "-" | date}}</p>
+                  </div>
+                  <div class="field">
+                    <span class="field__title capitalize">area id</span>
+                    <p class="field__data">{{profiles.actualProfile.area_id || "-"}}</p>
+                  </div>
+                </div>  
+              </div>
+            </div> 
+          </div> 
+        </div>  
+      </div>
+    </div><!-- END Contact Modal -->
   </div>
 
   <script src="assets/javascripts/vendor/bundle.js"></script>

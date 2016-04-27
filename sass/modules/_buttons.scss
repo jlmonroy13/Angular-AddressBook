@@ -42,6 +42,22 @@
   }
 }
 
+.button-close {
+  color: $gray;
+  font-weight: 700px;
+  cursor: pointer;
+  @include font-size(22px);
+  transition: 0.5s;
+  &--position {
+    position: absolute;
+    right: 20px;
+    top: -5px;
+  }
+  &:hover {
+    @include font-size(25px);
+  }
+}
+
 .button-border{
   border: 1px solid;
   text-transform: uppercase;
